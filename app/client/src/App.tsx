@@ -8,26 +8,27 @@ export default function App() {
 	const [count, setCount] = useState(0)
 
 	return (
-		<div className={`app ${styles} bg-cover bg-center bg-blue-500 w-screen h-screen`}>
-			<button>Spin Up A Project</button>
+		<div className={`app ${styles} bg-cover bg-center bg-blue-500 w-screen h-screen flex-auto`}>
 
-			<div className="mx-auto my-16 p-8 bg-black bg-opacity-75 rounded-lg">
+			<div className="flex-shrink my-16 p-8 bg-black bg-opacity-75 rounded-2xl">
 				<div className="logo-container">
-					<a href="https://turbo.build/repo" target="_blank" >
-						<img src="/turborepo.svg" className="logo turbo" />
+					<a href="https://turbo.build/repo" target="_blank">
+						<img src="/turborepo.svg" className="logo turbo"/>
 					</a>
-					<a href="https://vitejs.dev" target="_blank" >
-						<img src="/vite.svg" className="logo vite" />
+					<a href="https://vitejs.dev" target="_blank">
+						<img src="/vite.svg" className="logo vite"/>
 					</a>
 					<a href="https://react.dev" target="_blank">
-						<ReactLogo className="logo react" />
+						<ReactLogo className="logo react"/>
 					</a>
 				</div>
 
 				<h1>
-					<span className="turbo">TURBOREPO</span> +
-					<span className="vite"> Vite</span> +
-					<span className="react"> React</span>
+					<span className="turbo">TURBOREPO</span>
+					<span className="plus">+</span>
+					<span className="vite">Vite</span>
+					<span className="plus">+</span>
+					<span className="react">React</span>
 				</h1>
 
 
@@ -40,7 +41,7 @@ export default function App() {
 					</p>
 				</div>
 				<p className="read-the-docs">
-					Click on the Vite and React logos to learn more
+					Click on the logos to learn more
 				</p>
 			</div>
 		</div>
@@ -49,18 +50,20 @@ export default function App() {
 
 let {styles} = css`
 	:local(.styles) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		color: white;
 		background-image: url('/images/spinupOrchestra.png');
 
 		h1 {
 			font-weight: bold;
-			font-size: 3em;
+			font-size: 2.5em;
 		}
 
 		h1 .turbo {
-			color: #101010;
-			font-size: 0.6em;
-			text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+			color: #ffffff;
+			font-size: .6em;
 		}
 
 		.vite {
@@ -75,6 +78,12 @@ let {styles} = css`
 			color: #daf788;
 		}
 
+		.plus {
+			font-weight: normal;
+			font-size: 1.3em;
+			margin: 0.5em;
+		}
+
 		p {
 			color: #19a8ff;
 		}
@@ -87,10 +96,10 @@ let {styles} = css`
 		}
 
 		.logo {
-			height: 150px;
+			height: 160px;
 			width: auto;
 			margin-bottom: 5px;
-			padding: 1.5em 2em;
+			padding: 1.5em 2.2em;
 			will-change: filter;
 			transition: filter 300ms;
 		}
@@ -100,7 +109,7 @@ let {styles} = css`
 		}
 
 		.logo.turbo {
-			padding-left: 100px;
+			padding-left:90px;
 			filter: drop-shadow(0 0 50px rgba(255, 255, 255, 1));
 		}
 
