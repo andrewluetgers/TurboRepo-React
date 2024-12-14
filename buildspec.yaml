@@ -18,6 +18,6 @@ phases:
             - pnpm run ciBuild
     post_build:
         commands:
-            - aws s3 sync --delete app/client/dist "s3://www.metamedia.co"
+            - aws s3 sync --delete app/client/dist "s3://www.rundoc.dev"
             - npm run invalidate
             - echo Build completed on `date`
